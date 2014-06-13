@@ -1,4 +1,4 @@
-angular.module('angularHttpProgress').directive 'httpProgress', [ '$timeout', '$sce',  ($timeout, $sce) ->
+angular.module('AngularProgress').directive 'httpProgress', [ '$timeout', '$sce',  ($timeout, $sce) ->
   template: """
 <div ng-show="requestInProgress" ng-bind-html="httpPending"></div>
 <div ng-show="requestSucceeded" ng-bind-html="httpOnSuccess"></div>

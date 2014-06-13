@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'angular_http_progress/version'
+require 'angular_progress/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "angular_http_progress"
-  spec.version       = AngularHttpProgress::VERSION
+  spec.name          = "angular_progress"
+  spec.version       = AngularProgress::VERSION
   spec.authors       = ["Tushar Ranka"]
   spec.email         = ["tusharranka@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
+  spec.description   = %q{ Angular directive for tracking progress. Easily add spinner and progress indicators using AngularJS}
+  spec.summary       = %q{Angular directive for tracking progress}
   spec.homepage      = ""
   spec.license       = "MIT"
 
