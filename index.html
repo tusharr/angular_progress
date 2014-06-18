@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Angular progress : RubyGem and Javascript to track HTTP Progress and use spinner and progress indicators." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Angular progress</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/tusharr/angular_progress">View on GitHub</a>
+
+          <h1 id="project_title">Angular progress</h1>
+          <h2 id="project_tagline">RubyGem and Javascript to track HTTP Progress and use spinner and progress indicators.</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/tusharr/angular_progress/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/tusharr/angular_progress/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="angularprogress" class="anchor" href="#angularprogress"><span class="octicon octicon-link"></span></a>AngularProgress</h1>
+
+<p>Display progress of an HTTP action using AngularJS. Use it for spinners, progress-messages, success messages.</p>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>There are two ways to use AngularProgress</p>
+
+<h4>
+<a name="javascript" class="anchor" href="#javascript"><span class="octicon octicon-link"></span></a>Javascript</h4>
+
+<p><a href="https://raw.githubusercontent.com/tusharr/angular_progress/master/compiled/angular_progress.js">Download Javascript</a></p>
+
+<h4>
+<a name="ruby-gem" class="anchor" href="#ruby-gem"><span class="octicon octicon-link"></span></a>Ruby gem</h4>
+
+<p>Add this line to your application's Gemfile:</p>
+
+<pre><code>gem 'angular_progress'
+</code></pre>
+
+<p>And then execute:</p>
+
+<pre><code>$ bundle
+</code></pre>
+
+<p>And then add this to your application.js in your Rails 3.1+ Application</p>
+
+<p><code>//= require angular_http_progress</code></p>
+
+<p>Or install it yourself as:</p>
+
+<pre><code>$ gem install angular_progress
+</code></pre>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>When calling $http methods in angular, use the requestName as a property for the data argument. <a href="https://code.angularjs.org/1.2.18/docs/api/ng/service/%24http">$http Angular Documentation</a></p>
+
+<p>Use the requestName as value of the http-progress attribute to tie it all together. Multiple directives can listen to the same requestName at the same time.</p>
+
+<p>Sample: Button with pending &amp; success message </p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23457337/angular_progress_1.gif" alt="button"></p>
+
+<p>Sample: Button with pending &amp; error message </p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23457337/angular_progress_with_error.gif" alt="button_with_error"></p>
+
+<p>Sample: Pending &amp; Success message</p>
+
+<p><img src="https://dl.dropboxusercontent.com/u/23457337/angular_progress_with_message.gif" alt="with_message"></p>
+
+<h4>
+<a name="markup" class="anchor" href="#markup"><span class="octicon octicon-link"></span></a>Markup</h4>
+
+<div class="highlight highlight-html"><pre>    <span class="nt">&lt;div</span> <span class="na">ng-controller=</span><span class="s">"SampleController"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;a</span>  <span class="na">http-angular=</span><span class="s">"sampleHttpRequest"</span> <span class="na">class=</span><span class="s">"btn btn-default"</span> <span class="na">ng-click=</span><span class="s">"startRequest()"</span>
+            <span class="na">http-pending=</span><span class="s">"Saving..."</span>
+            <span class="na">http-success=</span><span class="s">"Saved Successfully"</span>
+            <span class="na">http-error=</span><span class="s">"Uh oh..."</span><span class="nt">&gt;</span>
+         Save
+        <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+<h4>
+<a name="javascript-1" class="anchor" href="#javascript-1"><span class="octicon octicon-link"></span></a>Javascript</h4>
+
+<div class="highlight highlight-javascript"><pre>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'SampleApp'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'AngularProgress'</span><span class="p">]);</span>
+
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'SampleApp'</span><span class="p">).</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'SampleController'</span><span class="p">,</span> <span class="p">[</span>
+<span class="s1">'$http'</span><span class="p">,</span> <span class="s1">'$scope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$http</span><span class="p">,</span> <span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$scope</span><span class="p">.</span><span class="nx">startRequest</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$http</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">'/my/endpoint'</span><span class="p">,</span> <span class="p">{</span>
+            <span class="nx">param1</span><span class="o">:</span> <span class="s1">'value1'</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nx">requestName</span><span class="o">:</span> <span class="s1">'sampleHttpRequest'</span>
+        <span class="p">});</span>
+    <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">]);</span>
+</pre></div>
+
+<h2>
+<a name="contributing" class="anchor" href="#contributing"><span class="octicon octicon-link"></span></a>Contributing</h2>
+
+<ol>
+<li>Fork it</li>
+<li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
+<li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
+<li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
+<li>Create new Pull Request</li>
+</ol>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Angular progress maintained by <a href="https://github.com/tusharr">tusharr</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
