@@ -1,4 +1,4 @@
-angular.module('angularProgress').factory 'httpProgressInterceptor', ['$q', '$rootScope', ($q, $rootScope) ->
+angular.module('AngularProgress').factory 'httpProgressInterceptor', ['$q', '$rootScope', ($q, $rootScope) ->
   request: (request) ->
     requestName = request.requestName || request.config?.requestName || request.data?.requestName
     if requestName
