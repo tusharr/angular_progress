@@ -8,7 +8,7 @@ There are two ways to use AngularProgress
 
 #### Javascript
 
-(Download Link)
+[Download Javascript](https://raw.githubusercontent.com/tusharr/angular_progress/master/compiled/angular_progress.js)
 
 #### Ruby gem
 
