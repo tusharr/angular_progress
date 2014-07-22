@@ -1,0 +1,12 @@
+{
+    "author": "https://github.com/tusharr/angular_progress/graphs/contributors",
+    "name": "angular_progress",
+    "description": "Display progress of an HTTP action using AngularJS. Use it for spinners, progress-messages, success messages.",
+    "version": "0.0.2",
+    "homepage": "http://angular-ui.github.io/bootstrap/",
+    "main": "compiled/angular_progress.js",
+    "dependencies": {
+        "angular": "^1.2.0"
+    },
+    "license": "MIT"
+}
