@@ -4,6 +4,7 @@
     "description": "Display progress of an HTTP action using AngularJS. Use it for spinners, progress-messages, success messages.",
     "version": "0.1.0",
     "homepage": "http://angular-ui.github.io/bootstrap/",
+    "main": "compiled/angular_progress.js",
     "dependencies": {
         "angular": "^1.2.0"
     },
