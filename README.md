@@ -35,11 +35,11 @@ When calling $http methods in angular, use the requestName as a property for the
 Use the requestName as value of the http-progress attribute to tie it all together. Multiple directives can listen to the same requestName at the same time.
 
 
-Sample: Button with pending & success message 
+Sample: Button with pending & success message
 
 ![button](https://dl.dropboxusercontent.com/u/23457337/angular_progress_1.gif)
 
-Sample: Button with pending & error message 
+Sample: Button with pending & error message
 
 ![button_with_error](https://dl.dropboxusercontent.com/u/23457337/angular_progress_with_error.gif)
 
@@ -50,7 +50,7 @@ Sample: Pending & Success message
 #### Markup
 ```html
     <div ng-controller="SampleController">
-        <a  http-angular="sampleHttpRequest" class="btn btn-default" ng-click="startRequest()"
+        <a  http-progress="sampleHttpRequest" class="btn btn-default" ng-click="startRequest()"
             http-pending="Saving..."
             http-success="Saved Successfully"
             http-error="Uh oh...">
