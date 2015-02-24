@@ -4,7 +4,8 @@
 
   angular.module('AngularProgress').config([
     '$httpProvider', function($httpProvider) {
-      return $httpProvider.interceptors.push('httpProgressInterceptor');
+      var _ref;
+      return (_ref = $httpProvider.interceptors) != null ? _ref.push("httpProgressInterceptor") : void 0;
     }
   ]);
 
