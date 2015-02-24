@@ -1,4 +1,5 @@
 angular.module('AngularProgress', [])
 angular.module('AngularProgress').config ['$httpProvider', ($httpProvider) ->
-  $httpProvider.interceptors.push('httpProgressInterceptor')
+  _ref = undefined
+  if (_ref = $httpProvider.interceptors) != null then _ref.push('httpProgressInterceptor') else undefined
 ]
